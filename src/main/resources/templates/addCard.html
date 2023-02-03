@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}"/>
+</head>
+<body>
+
+<form th:action="@{/addCard}"
+      th:object="${cardForm}" method="POST">
+    <fieldset>
+        <legend>Add your card !</legend>
+        <div>
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name" th:field="*{name}">
+        </div>
+        <div>
+            <label for="description">Description :</label>
+            <input type="text" id="description" name="description" th:field="*{description}">
+        </div>
+        <div>
+            <label for="imageUrl">Image URL :</label>
+            <input type="text" id="imageUrl" name="imageUrl" th:field="*{imgUrl}">
+        </div>
+        <div>
+            <label for="family">Family :</label>
+            <select id="family" name="family" th:field="*{family}">
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                <option value="earth">Ground</option>
+                <option value="air">Air</option>
+            </select>
+        </div>
+        <div>
+            <label for="affinity">Affinity :</label>
+            <select id="affinity" name="affinity" th:field="*{affinity}">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="nature">Nature</option>
+                <option value="spirit">Spirit</option>
+            </select>
+        </div>
+        <div>
+            <label for="hp">PV :</label>
+            <input type="range" id="hp" name="hp" min="0" max="100" th:field="*{hp}">
+        </div>
+        <div>
+            <label for="energy">Energy :</label>
+            <input type="range" id="energy" name="energy" min="0" max="100" th:field="*{energy}">
+        </div>
+        <div>
+            <label for="attack">Attack :</label>
+            <input type="range" id="attack" name="attack" min="0" max="100" th:field="*{attack}">
+        </div>
+        <div>
+            <label for="defense">Defense :</label>
+            <input type="range" id="defense" name="defense" min="0" max="100" th:field="*{defence}">
+        </div>
+        <div class="buttons">
+            <input type="submit" class="create" value="Create"/>
+        </div>
+    </fieldset>
+</form>
+</body>
+</html>
